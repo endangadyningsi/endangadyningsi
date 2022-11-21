@@ -1,0 +1,88 @@
+print("=============================")
+print("====ATM BANK NADIN====")
+print("===WELCOME==")
+print("=============================")
+
+
+Saldo = 1000000000
+
+print()
+print("pilih menu :")
+print("1. Cek Saldo \n2. Isi Saldo \n3. Ambil Uang \n4. Transfer Uang \n5. Donasi")
+print()
+
+plh = int(input("masukkan pilihan :"))
+
+if plh == 1:
+    print("Saldo yang anda miliki adalah Rp{}".format(Saldo))
+    print("=============================")
+
+elif plh == 2:
+    print("Isi Saldo !")
+    nominal = int(input("Masukkan Nominal (kelipatan 50.000) : Rp"))
+    if nominal < 50000:
+        print("nominal yang anda masukkan kurang!")
+        print("Gapunya uang ya? sama wk")
+        print("=============================")
+
+    else:
+        proses = Saldo + nominal
+        print("Saldo anda berhasil diisi Rp{}".format(nominal))
+        print("Total Saldo anda adalah : Rp{}".format(proses))
+        print("=============================")
+
+elif plh == 3:
+    print("Ambil Uang !")
+    nominal = int(input("masukkan nominal :"))
+    if nominal > 1000000000:
+        print("nominal yang anda masukkan tidak mencukupi!")
+        print("=============================")
+
+    elif nominal < 50000:
+        print("nominal yang anda masukkan salah!")
+        print("=============================")
+
+    else:
+        proses = Saldo - nominal
+        print("Saldo anda berhasil diambli Rp{}".format(nominal))
+        print("Saldo sisa : Rp{}".format(proses))
+        print("=============================")
+
+elif plh == 4:
+    print("Transfer Uang!!!")
+    print("masukkan tujuan !")
+    nama = str(input("nama          :"))
+    no = int(input("No Rekening :"))
+    nominal = int(input("masukkan Nominal :"))
+    
+    if nominal > 1000000000:
+        print("Nominal yang anda masukkan Tidak Cukup!")
+        print("=============================")
+    elif nominal < 50000:
+        print("nominal yang anda masukkan salah!")
+        print("=============================")
+    else:
+        proses = Saldo - nominal
+        print("Anda berhasil Transfer ke {} Sebesar Rp".format(nama) ,nominal)
+        print("Saldo Sisa Anda Adalah : Rp{}".format(proses))
+        print("=============================")
+
+elif plh == 5:
+    print("Donasi!")
+    print("masukkan tujuan !")
+    nama = str(input("nama          :"))
+    no = int(input("No Rekening :"))
+    pesan = str(input("pesan     :"))
+    nominal = int(input("masukkan nominal :"))
+    if nominal > 1000000000:
+        print("nominal yang anda masukkan Tidak Cukup!")
+        print("=============================")
+    elif nominal < 50000:
+        print("nominal yang anda masukkan salah!")
+        print("=============================")
+    else:
+        proses = Saldo - nominal
+        print("Anda berhasil Donasi ke {} Sebesar Rp".format(nama) ,nominal)
+        print("Saldo Sisa Anda Adalah : Rp{}".format(proses))
+        print("=============================")
+
